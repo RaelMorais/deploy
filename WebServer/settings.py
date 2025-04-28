@@ -28,7 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['teste122.azurewebsites.net']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://teste122.azurewebsites.net',  # Adicione o domínio da sua Azure
+]
 
+CSRF_COOKIE_HTTPONLY = False  # Não envie cookies de CSRF para requisições com JWT
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,19 +45,24 @@ INSTALLED_APPS = [
     'eLOGiar',
     'rest_framework_simplejwt',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # Cors header aqui 
 ]
 
+
+CORS_ALLOWED_ORIGINS = [
+    'https://teste122.azurewebsites.net',  # Altere para seu domínio
+]
 ROOT_URLCONF = 'WebServer.urls'
 
 TEMPLATES = [
@@ -147,3 +156,8 @@ SIMPLE_JWT = {
 }
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True # Feat: Apagar o cache após fechar o navegador. 
+
+# Configurações de segurança para cookies e sessão
+SESSION_COOKIE_SECURE = True  # Cookie seguro apenas para HTTPS
+CSRF_COOKIE_SECURE = True  # Token CSRF também será enviado apenas por HTTPS
+SECURE_SSL_REDIRECT = True  # Forçar redirecionamento para HTTPS
