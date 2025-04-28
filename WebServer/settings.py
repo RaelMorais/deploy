@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'eLOGiar',
     'rest_framework_simplejwt',
     'rest_framework',
-    'corsheaders.middleware.CorsMiddleware',  # Cors header aqui 
+    'corsheaders',
+     # Cors header aqui 
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware', 
 ]
 
 ROOT_URLCONF = 'WebServer.urls'
