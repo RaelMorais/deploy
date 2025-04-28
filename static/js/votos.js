@@ -18,7 +18,7 @@
             }
             // Realiza requisão GET pro exportar 
             try {
-                const response = await fetch('http://127.0.0.1:8000/exportar/', {
+                const response = await fetch('https://teste122.azurewebsites.net/exportar/', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
