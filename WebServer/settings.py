@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',  # Comment this out or conditionally disable for API views
+    # 'django.middleware.csrf.CsrfViewMiddleware',  # Comment this out or conditionally disable for API views
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -162,3 +162,4 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True # Feat: Apagar o cache após fechar o nav
 SESSION_COOKIE_SECURE = True  # Cookie seguro apenas para HTTPS
 CSRF_COOKIE_SECURE = True  # Token CSRF também será enviado apenas por HTTPS
 SECURE_SSL_REDIRECT = True  # Forçar redirecionamento para HTTPS
+CORS_ALLOW_CREDENTIALS = True  # Permitir cookies em requisições cross-origin
