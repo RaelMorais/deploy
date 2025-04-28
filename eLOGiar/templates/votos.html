@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/votos.css'%}">
+    <script src="{% static 'js/votos.js' %}"></script>
+    <title>Exportar Votos</title>
+</head>
+<!-- Não apagar o JS, falta criar o arquivo para js -->
+<body>
+    <div class="container">
+        <h2>Exportar Votos</h2>
+        <form method="POST" action="{% url 'resetar_votos' %}" onsubmit="return confirm('Tem certeza que deseja apagar TODOS os votos?');">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Resetar Votos</button>
+        </form>
+        <button class="" onclick="exportarExcel()">Exportar para Excel</button>
+        <!--  exportarExcel() é a função responsavel por ao clicar, salvar a planilha não alterar o nome!!!!-->
+        <p id="error" class="#"></p>
+        <!-- É para renderizar o erro, os logs de erros estão no JS.  -->
+
+    </div>
+</body>
+</html>

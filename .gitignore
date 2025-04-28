@@ -1,0 +1,9 @@
+.env
+env
+/venv
+./env 
+./_env
+venv 
+__pycache__
+pycache 
+./pycache

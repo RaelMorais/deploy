@@ -1,0 +1,104 @@
+/* Página de categorias */
+
+/* Título principal */
+.title {
+    text-align: center;
+    margin: 1.5rem;
+    color: rgb(58, 58, 58);
+}
+
+/* Conteiner */
+.containerCategory{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Cards com as categorias */
+.optionsCategory{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 30%;
+    height: 80vh;
+    transition: .5s all;
+    background-color: var(--color-white);
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+}
+/* Imagem dos cards */
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img img{
+    width: 60%;
+}
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 35%;
+    text-align: center;
+    font-size: 2vh;
+}
+
+@media screen and (max-width: 1188px) {
+    .containerCategory {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1.5rem 0;
+    }
+    .optionsCategory {
+        width: 60%;
+        height: 40vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+    .optionsCategory .img img {
+        width: 12rem;
+    }
+    .texts {
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .optionsCategory {
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .optionsCategory .img img {
+        width: 8rem;
+    }
+    .texts {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .optionsCategory {
+        display: flex;
+        flex-direction: column;
+        height: 45vh;
+        padding: 1.5rem 0;
+        gap: 1rem;
+    }
+    .optionsCategory .img img {
+        width: 6rem;
+    }
+    .texts {
+        width: 80%;
+        height: 55%;
+    }
+}

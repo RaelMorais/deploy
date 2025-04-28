@@ -1,0 +1,39 @@
+<!-- Página da votação enviada com sucesso -->
+ 
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="icon" href="{% static 'img/icon.png'%}">
+    <title>eLOGiar | Indicações Realizadas</title>
+</head>
+<body>
+    <header>
+        <div class="start">
+            <img src=" {% static 'img/colors.png'%}" alt="Banner de cores">
+        </div>
+        <div class="logo">
+            <img src="{%static 'img/logo.png' %}" alt="Logo do projeto">
+        </div>
+    </header>
+    <main class="error-main">
+        <div class="message-container">
+            <h1>Voto adicionado com Sucesso!</h1>
+            <a href="{% url 'listar_categorias' %}">Voltar para as categorias</a>
+        </div>
+    </main>
+    <footer>
+        <div class="end">
+            <img src="{%static 'img/colors.png'%}" alt="Banner de cores">
+        </div>
+    </footer>
+</body>
+</html>
+        <!-- {% comment %} <ul>
+            {% for indicacao in indicacoes %}
+                <li>{{ indicacao.pessoa_votando.nome }} indicou {{ indicacao.pessoa_votadas.nome }} para a categoria {{ indicacao.categoria_votadas.nome }} - Mensagem: {{ indicacao.mensagem }}</li>
+            {% endfor %}
+        </ul> {% endcomment %} -->

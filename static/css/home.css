@@ -1,0 +1,70 @@
+@import url("header.css");
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    'first second';
+    height: 80vh;
+    justify-content: space-around;
+}
+
+.firt-division{
+    grid-area: first;
+    font-family: "Poppins", serif;
+    display: grid;
+    margin-top: 15vh;
+    width: 60rem;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.firt-division img{
+    height: 10vh;
+}
+
+.firt-division h2{
+    font-size: 1.4rem;
+    color: rgba(14, 70, 92, 1);
+}
+
+.firt-division .texts p{
+    color: rgba(114, 108, 108, 1);
+    line-height: 2;
+}
+
+.logo-titulo{
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+}
+
+.logo-titulo img{
+    height: 11vh;
+}
+
+.logo-titulo h2{
+    font-size: 2.2vh;
+}
+
+.firt-division .texts{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    font-size: 1.2rem;
+}
+
+.second-division{
+    grid-area: second;
+    display: grid;
+    width: 50rem;
+    height: 50vh;
+    justify-items: center;
+    justify-content: start;    
+}
+
+.second-division .imgLogo {
+    height: 65vh;
+}
+

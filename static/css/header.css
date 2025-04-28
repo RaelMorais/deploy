@@ -1,0 +1,26 @@
+header{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px px var(--color-gray);
+    background-color: var(--color-white);
+
+    & .logo img {
+        width: 22vh;
+        padding: 1rem;
+    }
+    & .start img {
+        display: flex;
+        align-items: start;
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header{
+        & .logo img {
+            width: 5rem;
+        }
+    }
+}

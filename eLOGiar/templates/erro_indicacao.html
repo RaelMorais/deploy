@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <!-- CASO O USUARIO VOTE EM ALGUEM DUAS VEZES -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/icon.png'%}">
+    <title>eLOGiar | Erro na Indicação</title>
+</head>
+<body class="error-body">
+    <header>    
+        <div class="start">
+            <img src=" {% static 'img/colors.png'%}" alt="Banner de cores">
+        </div>
+        <div class="logo">
+            <img src="{%static 'img/logo.png' %}" alt="Logo do projeto">
+        </div>
+    </header>
+    <main class="error-main">
+        <div class="message-container">
+            <h1>{{ mensagem }}</h1>
+            <a href="{% url 'listar_categorias' %}">Voltar para as categorias</a>
+        </div>
+    </main>
+    <footer>
+        <div class="end">
+            <img src="{%static 'img/colors.png'%}" alt="Banner de cores">
+        </div>
+    </footer>
+</body>
+</html>

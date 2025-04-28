@@ -1,0 +1,28 @@
+.error-main{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    padding: 10px;
+    margin-bottom: 1rem;
+}
+.message-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    & h1{
+        font-weight: 800;
+    }
+
+    & a{
+        color: var(--color-black);
+        margin: 30px;
+
+        &:hover{
+            text-decoration: solid;
+        }
+    }
+
+}

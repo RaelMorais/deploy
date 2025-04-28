@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <script src="{% static 'js/login.js' %}"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div>
+            <input type="text" id="username" placeholder="Usuário" required>
+            <!-- Não alterar o type nem o id="usernmae", o type garante que é um texto, o id='usernmae garante que faça solicitação no JWT' -->
+            <input type="password" id="password" placeholder="Senha" required>
+            <!-- Não alterar o type, nem o id="password" mesmo motivos citados acima -->
+            <button onclick="login()">Entrar</button>
+            <!--  Não alterar o nome do onclick() -->
+            <p id="error" class="#"></p>
+            <!-- Não alterar o nome do id, a class pode personalizar como quiser.  -->
+        </div>
+    </div>
+</body>
+</html>

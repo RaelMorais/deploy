@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+ <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>eLOGiar | Votação</title>
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="icon" href="{% static 'img/icon.png'%}">
+    </head>
+    <body class="categoria-{{ categoria.id }}">
+        <header>
+            <div class="start">
+                <img src=" {% static 'img/colors.png'%}" alt="Banner de cores">
+            </div>
+            <div class="logo">
+                <img src="{%static 'img/logo.png' %}" alt="Logo do projeto">
+            </div>
+        </header>
+        <main>
+            <section id="form">
+                <form method="POST">
+                    <h2>Indicação de Atitude</h2>
+                    {% csrf_token %}
+                    <!-- Exibe a Categoria Selecionada -->
+                    <h3 for="categoria">Categoria: {{ categoria.nome }}</h3>
+                    <input type="hidden" name="categoria" value="{{ categoria.id }}"> <!-- ver isso aqui-->
+                    <!-- Campo para votante -->
+                    <div class="input h15">
+                        <label for="votante">Seu Nome:</label>
+                        <div class="select">
+                            <select id="votante" name="votante" required>
+                                <option value="">Selecione seu nome</option>
+                                {% for usuario in usuarios %}
+                                    <option value="{{ usuario.id }}">{{ usuario.nome }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Campo para votado -->
+                    <div class="input h15">
+                        <label for="votado">Pessoa a ser indicada:</label>
+                        <div class="select">
+                            <select id="votado" name="votado" required>
+                                <option value="">Selecione uma pessoa para indicar</option>
+                                {% for usuario in usuarios %}
+                                    <option value="{{ usuario.id }}">{{ usuario.nome }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Campo para mensagem -->
+                    <div class="input">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="Adicione uma mensagem sobre a pessoa indicada..." required></textarea>
+                    </div>
+                    <button type="submit"><label>Enviar Voto</label></button>
+                </form>
+            </section>
+        </main>
+        <footer>
+                <div class="end">
+                    <img src="{%static 'img/colors.png'%}" alt="Banner de cores">
+                </div>
+        </footer>
+    </body>
+ </html>

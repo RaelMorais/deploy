@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+        <link rel="icon" href="{% static 'img/icon.png'%}">
+        <title>eLOGiar | Home</title>
+    </head>
+    <body>
+        <header>
+            <div class="start">
+                <img src="{% static 'img/lineColors.png' %}" alt="Linha de cores">
+            </div>
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Imagem da Logo">
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="firt-division">
+                    <div class="logo-titulo">
+                        <img src="{%static 'img/logo_letter.png'%}" alt="Logo">
+                        <h2>Boas atitudes não devem ficar invisíveis</h2>
+                    </div>
+                    
+                    <div class="texts">
+                        <p>Essa plataforma, tem o objetivo de indicar  atitudes dos colaboradores da área da logistica.</p>
+                        <p>Para o colaborador mais indicado em cada uma das categorias, ele ganhará uma bonificação.</p>
+                    </div>
+                </div>
+                <div class="second-division">
+                    <img class="imgLogo" src="{% static 'img/mascote1_NB.png'%}" alt="Estrela Voando">
+                    <div class="buttom">
+                        <button id="redirBtn"><label>Indique Agora</label></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="end">
+                <img src="{%static 'img/colors.png'%}" alt="Banner de cores">
+            </div>
+        </footer>
+    </body>
+    <script type="text/javascript">
+        document.getElementById('redirBtn').onclick = function() {
+            window.location.href = "{% url 'carregamento' %}";
+        };
+    </script>
+</html>

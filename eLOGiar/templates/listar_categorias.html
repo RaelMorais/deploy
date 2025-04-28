@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <!-- VOTO REALIZADO COM SUCESSO -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="icon" href="{% static 'img/icon.png'%}">
+        <title>eLOGiar | Categorias</title>
+    </head>
+    <body>
+        <header>
+            <div class="start">
+                <img src=" {% static 'img/colors.png'%}" alt="Banner de cores">
+            </div>
+            <div class="logo">
+                <img src="{%static 'img/logo.png' %}" alt="Logo do projeto">
+            </div>
+        </header>
+        <main>
+            <h1 class="title">Selecione uma categoria: </h1>
+            
+            <div class="containerCategory">
+                 <div class="optionsCategory">
+                    <div class="img">
+                        <img src="{% static 'img/mascote2_NB.png' %}" alt="Imagem da estrela">
+                    </div>
+                    <div class="texts">
+                        <h1>FaciLOG</h1>
+                        <p>Atitudes de colaboração, comunicação e equilíbrio.</p>
+                        <a href="{% url 'indicar_usuario' categoria_id=3 %}">
+                            <button><label>Indicar</label></button>
+                        </a>
+                    </div>
+                </div>
+ 
+                <div class="optionsCategory">
+                    <div class="img">
+                        <img src="{% static 'img/mascote1_NB.png' %}" alt="Imagem da estrela">
+                    </div>
+                    <div class="texts">
+                        <h1>InovaLOG</h1>
+                        <p>Atitudes de proatividade e inovação.</p>
+                        <a href="{% url 'indicar_usuario' categoria_id=2 %}">
+                            <button><label>Indicar</label></button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="optionsCategory">
+                    <div class="img">
+                        <img src=" {% static 'img/mascote1_NB.png' %}" alt="Imagem da estrela">
+                    </div>
+                    <div class="texts">
+                        <h1>LOGiMAX</h1>
+                        <p>Colaboradores que buscam resultados-chave, de forma ágil e eficiente</p>
+                        <a href="{% url 'indicar_usuario' categoria_id=1 %}">
+                            <button><label>Indicar</label></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="end">
+                <img src="{%static 'img/colors.png'%}" alt="Banner de cores">
+            </div>
+        </footer>
+    </body>
+    <script type="text/javascript">
+        document.getElementById('bt1_2').onclick = function() {
+            window.location.href = "{% url 'carregamento' %}";
+        };
+    </script>
+</html>
